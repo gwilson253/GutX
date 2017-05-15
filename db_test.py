@@ -4,7 +4,7 @@ import sqlite3
 
 con = sqlite3.connect('/home/greg/programming/GutX/data/usda_db.db')
 
-filepath = '/home/greg/programming/GutX/data/sr28asc/FOOD_DES.txt'
+filepath = '/home/greg/programming/GutX/data/sr28asc/NUT_DATA.txt'
 columns = ['NBD_No',
            'FdGrp_Cd',
            'Long_Desc',
@@ -28,7 +28,7 @@ def get_lines(filepath):
 lines = get_lines(filepath)
   
 # get rid of carraige returns
-lines = [_[:-4] for _ in lines]
+lines = [_[:-2] for _ in lines]
 
 # split by caret
 lines = [_.split(b'^') for _ in lines]
